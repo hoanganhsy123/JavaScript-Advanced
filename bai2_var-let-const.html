@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function run(){
+            var a = 1;
+            console.log(a);
+            //  var có thể khai báo lại được biến
+            let b = 2;
+            console.log(b);
+            const c = 3;
+            console.log(c);
+            // let & const không thể khai báo lại biến 
+            // var & let khai báo không cần gán giá trị, const bắt buộc phải gán giá trị cho biến
+            //  hosting: + var không cần định nghĩa có thể console biến được với giá trị của biến là underfine
+            //           + let & const cần phải định nghĩa với console được biến 
+            
+        }
+        run();
+        // blockscope (các thành phần nằm trong {} của vòng lặp if và for ):
+        // if           
+        //          + var không tuân thủ blockscope nên biến vẫn được tạo bên ngoài blockscope
+            if (true){
+                var x = 3;
+            }
+            console.log(x);
+        //            + let & const: khai báo biến và biến chỉ nhận giá trị trong blockscope
+            if (true){
+                    let y = 4;
+                    const z = 5;
+                    console.log(y,z);
+                }    
+        // đối với vòng lặp for: const không thể dùng trong blockscope với vòng lặp for
+        for (var i = 0; i < 5; i++){
+            console.log(i);
+        }
+        for(let i = 0; i< 10; i +=2){
+            console.log(i);
+        }  
+        // ==> blockscope khai báo biến bằng let & const để giới hạn giá trị scope của biến lại, nhằm tối ưu chương trình
+    </script>
+</body>
+</html>

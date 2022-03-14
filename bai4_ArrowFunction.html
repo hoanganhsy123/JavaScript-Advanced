@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Arrow  function expression
+        // fat arrow ( => )
+        // Cách dùng thay thế 1 function
+        /*
+        function sum(a,b){
+            return a+b;
+        }
+        */
+
+        /*
+        let sum = function(a,b){
+            return a+b;
+        }
+        */
+       /*
+        let sum = (a,b) => {
+            return a+b;
+        }
+        */
+        let sum = (a,b) => a+b; //  hàm có 1 dòng có thể thu gọn và hiểu là return là a + b;
+        console.log(sum(2,4));
+        /*
+        let square = (x) => x*x;
+        */
+        let square = x => x*x; // nếu có 1 tham số không cần dùng ()
+        console.log(square(5));
+        // function không có tham số
+        let doSomething = () => Date.now();
+        console.log(doSomething());
+        let array = [1,2,3,4];
+        let arr= array.map(x => x*x);
+        console.log(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        /* Global Context 
+        
+        */
+       var mouse = {
+        name: "Mickey",
+        sayHi: function(){
+            console.log('Hi, my name is', this.name);
+        }
+       };
+    //    mouse.sayHi() ==> Gọi method sayHi trên biến mouse ==> context của sayHi là biến mouse, biến this trỏ đến mouse
+    let say = mouse.sayHi.bind(mouse);
+    // say = function(){ console.log...} 
+    say(); // biến say  không có context vì trước nó không có object nào ở trước (context = global context) 
+    // method bind thay đổi context của functicon
+    let cat = {
+        name: 'Tom'
+    }
+    let sayTom = mouse.sayHi.bind(cat)
+    sayTom(); 
+    </script> -->
+    <script>
+        function run(callback){
+            console.log('Thêm context bằng bind...')
+            callback();
+        }
+        let  call = {
+            name: 'Sỹ',
+            sayHi: function(){
+                console.log("Hi! My name is:", this.name);
+            }
+        };
+        run(call.sayHi.bind(call))
+    </script>
+    <button id="smartBtn"> Smart Button </button>
+    <script>
+        let button = document.getElementById('smartBtn')
+        var mouse = {
+            name: 'Mickey',
+            sayHello: function(){
+                alert('My name is '+ this.name);
+            }
+        };
+        button.addEventListener('click',
+        mouse.sayHello.bind(mouse));
+    </script>
+</body>
+</html>
