@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Array-like object & Arguments
+        // Array-like obj
+        const names = ['Anh Sỹ' , 'Giao Giao'];
+        for(let i = 0; i < names.length; i++){
+            console.log(names[i]);
+        }
+        console.log('---------Ví dụ array-like obj--------')
+        const obj = {
+            0: 'Hoàng',
+            1: 'Anh',
+            2: 'Sỹ',
+            length: 3
+        };
+        for( let i = 0; i < obj.length; i++){
+            console.log(obj[i]); 
+        } /* => Array like  object 
+            + Có thuộc tính length
+            + Có các index giống  Array hay còn gọi là key value của obj
+            */
+        // Arguments:(Thường được sử dụng với n tham số đầu vào) biến tồn tại bên trong scope của 1 hàm thông thường  
+        /*
+        function sum(a, b, c){
+            return a + b + c;
+        };
+        */
+       console.log("---------Ví dụ arguments-------")
+       function sum(){
+           console.log(arguments);
+           let result = 0;
+           for( let i = 0; i < arguments.length; i++){
+                result += arguments[i];
+           }
+           return result;
+       }
+        console.log(sum(2,3,4));
+        /* Biến đổi arguments thành 1 array*/
+        console.log('--------- Ví dụ chuyển arguments thành array-----------')
+        function sum(){
+            const numbers = Array.from(arguments);
+            return numbers.reduce(function(sum, num) {
+                return sum + num;
+            }, 0 ) // Reduce nhận 2 tham số là hàm (function) và giá trị bắt đầu(0). Trong hàm gồm có giá trị tích lũy và gtri vòng lặp tiếp theo nhận vào
+        }
+        console.log(sum(2, 3, 4, 5, 6, 8));
+    </script>
+</body>
+</html>

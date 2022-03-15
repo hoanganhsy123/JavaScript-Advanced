@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Apply: gọi 1 hàm không biết bao nhiêu đầu vào...
+    // call: function.call(this, param1, param2,....)
+    // apply: function.apply(this, [param1, param2,...])
+    function sum(){
+        const number = Array.from(arguments);
+        return number.reduce((sum, num) => sum + num, 0);
+    }
+    function avegare(){
+        //sum 
+        const s = sum.apply(null, arguments);
+        // avegare = s/arguments.length
+        return s / arguments.length;
+    }
+    console.log(avegare(1, 2, 4, 3, 5, 6));
+    </script>
+</body>
+</html>

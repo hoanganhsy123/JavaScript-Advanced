@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Call
+        function greeting(name, age){
+            console.log(`Hi, ${this.name}`, `I am, ${this.age}`); 
+        }
+        const myProfile = {
+                name: 'Hoàng Anh Sỹ',
+                age: 10
+        };  
+        greeting.call(myProfile);
+        /*
+        Hàm call giống bind 1 phần nào đó, tuy nhiên:
+        Khác: bind thì trả về 1 hàm, và phải gọi có () ex: greeting.bind(humment)()
+        còn hàm call thì không cần ()
+        Hàm call khi dùng  thì  gọi hàm và trả về giá trị mà hàm trả về, thực hiền hàm trước
+        */
+    </script>
+</body>
+</html>

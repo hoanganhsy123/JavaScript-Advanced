@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Template String
+        function greeting(name){
+            return 'Hi, ' + name +'!';
+        }
+         let  result = greeting('Sỹ');
+        console.log(result);
+        function greeting2(name2){
+            return `Hi, ${name2} ${1+2}!`; // Trong ${} có thể viết tất cả các biểu thức của js, hoặc các hàm, có thể chèn nhiều biến...
+        }
+        let result2 = greeting2('Hoàng Anh Sỹ');
+        console.log(result2);
+
+    </script>
+</body>
+</html>

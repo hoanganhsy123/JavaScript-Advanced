@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Arrow  function expression
+        // fat arrow ( => )
+        /*
+        var a = {
+            foo: 'bar',
+            run: function(){
+                setTimeout(function() {
+                    console.log(this.foo);
+                }.bind(this), 2000);
+            }
+        };
+        */
+       /*
+       var a = {
+           foo: 'Bar',
+           run: function(){
+               setTimeout( () => {
+                    console.log(this.foo)
+               }, 2000);
+           }
+       }
+        */
+       /*
+       var a = {
+           foo: 'Bar',
+           run: function(){
+               var that = this;
+               setTimeout(() => {
+                    console.log(that.foo)
+               }, 2000);
+           }
+       };
+       */
+      var a = {
+          foo: 'Bar',
+          run: function() {
+              setTimeout(function() {
+                  console.log(this.foo);
+              }.bind(a), 2000);
+          }
+      } 
+        a.run();
+    </script>
+</body>
+</html>
