@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Inheritance: Tính thừa kế(hướng đối tượng)
+      /*  
+      class Animal{
+            constructor(name){
+                this.name = name;
+            }
+            eat(){
+                console.log(`${this.name}, Eatting.........`);
+            }
+        }
+        class Bird extends Animal{
+            fly()   {
+                console.log("Flying....")
+            }
+        }
+        class Parrot extends Bird{
+            speak()  {
+                console.log(`${this.name}, speaking....`)
+            }
+        }
+        const bird = new Parrot('Sỹ');
+        bird.speak();
+    */
+        function Animal(name){
+            this.name = name;
+        }
+        Animal.prototype.eat = function (){
+            console.log('Eating');
+        }
+        function Bird(name) {
+            Animal.apply(this, arguments);
+        }      
+        Bird.prototype = new Animal();
+    </script>
+</body>
+</html>

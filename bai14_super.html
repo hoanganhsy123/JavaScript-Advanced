@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Super
+        class Hero {
+            constructor(name, hp, dame) {
+                this.name = name;
+                this.hp = hp; 
+                this.dame = dame;
+            }
+            applyDamege(dame){
+                this.hp -= dame;
+            }
+            attack(enemy){
+                enemy.applyDamege(this.dame);
+            }
+        }
+        class RangeHero extends Hero{
+            constructor(name, hp, dame, Range){
+                super(name, hp, dame);
+                this.Range = Range;
+            }
+            atatck(enemy) {
+                super.attack(enemy);
+                this.hp += this.dame;
+            }
+        }
+        const heroA = new Hero('A', 100, 20);
+        const heroB = new Hero('B', 200, 5);
+        console.log({heroA, heroB});
+        heroA.attack(heroB);
+        console.log({ heroA, heroB });  
+    </script>
+</body>
+</html>
