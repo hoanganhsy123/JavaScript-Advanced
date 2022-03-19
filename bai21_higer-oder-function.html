@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // Higher order functions: Hàm có thứ tự cao hơn
+       // chia thành các hàm nhỏ  của chương trình 
+       /*
+       + Functional Programming: truyền các hàm dưới dạng tham số cho cac hàm khác và cũng trả về dưới dạng các gtri
+       
+        */
+       function waitAndRun(ms, func){
+           setTimeout(func, ms);
+       }    
+       function run(){
+           console.log('Run');
+       }
+       waitAndRun(2000, run);
+    </script>
+</body>
+</html>

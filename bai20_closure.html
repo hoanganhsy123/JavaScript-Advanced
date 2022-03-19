@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Closure //garbage collector (check biến không được dùng sẽ loại bỏ khỏi bộ nhớ)
+        /*
+        function sum(a, b){
+            const c = a + b;
+            return function(){
+                console.log(c);
+            };
+        }
+        sum(1, 2)();
+        */
+       function debugLog(name){
+            return function(str){
+                console.log(`[${name}] ${str}`);
+            }
+       }
+       const log = debugLog('Mouse'); // gọi debugLog('Mouse') nó sẽ trả về function và log được gắn với function con của fct debug
+        log('Error happened'); // gọi đến chuỗi str
+    </script>
+</body>
+</html>

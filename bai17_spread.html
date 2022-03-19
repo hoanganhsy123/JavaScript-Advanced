@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Spread: trải các giá trị của array thành cá phần tử
+        //rest: gom các giá trị được truyền vào thành 1 array
+       const infoMyCar = {
+           name: 'Audi',
+           color: 'Red',
+           speed: 1200
+       };
+       console.log(infoMyCar);
+       const updateInfoMyCar = {
+           money: 20000,
+           color: 'blue'
+       };
+       console.log(updateInfoMyCar)
+       const newInfo = {...infoMyCar, ...updateInfoMyCar};
+       console.log(newInfo);
+       function addList(list, ...args) {
+            args.forEach((arg) => list.push(arg))
+                return list;
+        }
+        console.log(addList([2], 1, 2, 3)); // [2, 1, 2, 3]
+        let arr = [1, 2, 3, 4, 5, 6];
+        let arr2 = [-2, 3, 5, 7, 8, 9 ];
+        const arrPlus = [2, ...arr, ...arr2, 8];
+        console.log(arrPlus);
+        console.log("Tham khảo link https://viblo.asia/p/rest-parameters-va-spread-operator-E375zwxPKGW"  )
+    </script>
+</body>
+</html>

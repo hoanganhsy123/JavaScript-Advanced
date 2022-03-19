@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Rest: Phần còn lại
+        // Ứng dụng: Không biết số lượng tham số đầu vào
+    /*
+        function sum(...nums){
+            return nums.reduce((a,b) => {
+                return a + b;
+            }) 
+      }    
+      console.log(sum(1, 2, 3, 4, 5));
+    */
+   
+    function concat(separator, ...strings){
+        return strings.join(separator);
+    }
+    console.log(concat('.', 'a', 'b', 'c')); 
+    
+
+
+    function test(a, b, ...n){
+        return n.reduce((a,b) => {
+            return a + b;
+        })
+    }
+    console.log(test(1,2,3,4,5))
+
+
+    
+    function sum(...nums){
+        return nums.reduce((a,b) => {
+            return a + b;
+        })
+    }
+    console.log(sum(1,2,3,4,5,6));
+    </script>
+</body>
+</html>

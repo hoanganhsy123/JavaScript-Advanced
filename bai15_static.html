@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Static: Không được gọi từ extends ủa class mà được gọi thẳng từ class
+        class Foo {
+            static someMethod(){
+                console.log('Some method');
+            }
+            anotherMethod() {
+                console.log('another method');
+            }
+        }
+        const foo = new Foo();
+        
+    </script>
+</body>
+</html>
